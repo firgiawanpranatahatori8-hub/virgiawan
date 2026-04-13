@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Virgiawan Pranata | Automotive & Export Supplier</title>
+    <meta name="description" content="Portfolio of Virgiawan Pranata - Automotive Enthusiast, Export Supplier, and Plant Entrepreneur">
+    <!-- Google Fonts: Poppins & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            font-family: 'Inter', 'Poppins', sans-serif;
+            color: #e8e8e8;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* color palette: classic gold (#d4af37) + dark green (#1e4d2b) */
+        .accent-gold {
+            color: #d4af37;
+        }
+        .accent-green {
+            color: #2d6a4f;
+        }
+        .gold-border {
+            border-bottom: 2px solid #d4af37;
+            display: inline-block;
+            padding-bottom: 6px;
+        }
+        .btn-primary {
+            background: transparent;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            padding: 12px 28px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background: #d4af37;
+            color: #0a0a0a;
+            box-shadow: 0 0 18px rgba(212, 175, 55, 0.5);
+            transform: translateY(-3px);
+        }
+        .btn-primary i {
+            transition: transform 0.2s;
+        }
+        .btn-primary:hover i {
+            transform: translateX(4px);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            background: linear-gradient(135deg, #ffffff 30%, #d4af37 80%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .section-title .gold-border {
+            width: 70px;
+            height: 3px;
+            background: #d4af37;
+            border-bottom: none;
+            margin: 12px auto 0;
+            display: block;
+        }
+
+        /* header / navbar */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .logo span {
+            color: #d4af37;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #cfcfcf;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        /* hero section */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            background: radial-gradient(circle at 70% 20%, rgba(45, 106, 79, 0.15), transparent 60%);
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            animation: fadeUp 0.8s ease;
+            background: linear-gradient(135deg, #fff, #d4af37);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .hero .profession {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #d4af37;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .hero .tagline {
+            font-size: 1.2rem;
+            background: rgba(212, 175, 55, 0.1);
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            margin-top: 8px;
+            border: 1px solid rgba(212,175,55,0.3);
+        }
+        .hero-desc {
+            max-width: 700px;
+            margin: 2rem auto 0;
+            color: #bebebe;
+        }
+
+        /* about */
+        .about {
+            padding: 80px 0;
+            background: #0f0f0f;
+        }
+        .about-grid {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 2;
+        }
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #d0d0d0;
+        }
+        .about-highlight {
+            border-left: 4px solid #2d6a4f;
+            padding-left: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #e0e0e0;
+        }
+
+        /* skills */
+        .skills {
+            padding: 80px 0;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .skill-card {
+            background: #111111;
+            border-radius: 28px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(45, 106, 79, 0.4);
+        }
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #d4af37;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.8);
+        }
+        .skill-icon {
+            font-size: 2.8rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+        .skill-card h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+        .skill-card p {
+            color: #a8a8a8;
+            font-size: 0.95rem;
+        }
+
+        /* portfolio */
+        .portfolio {
+            padding: 80px 0;
+            background: #0f0f0f;
+        }
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .project-card {
+            background: #0f0f0f;
+            border-radius: 28px;
+            overflow: hidden;
+            width: 300px;
+            transition: 0.3s;
+            border: 1px solid #2a2a2a;
+        }
+        .project-card:hover {
+            transform: scale(1.02);
+            border-color: #d4af37;
+        }
+        .project-img {
+            height: 200px;
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #d4af37;
+        }
+        .project-info {
+            padding: 1.5rem;
+        }
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+        }
+        .project-info p {
+            color: #b4b4b4;
+            font-size: 0.9rem;
+        }
+        .tech-tag {
+            display: inline-block;
+            background: rgba(45, 106, 79, 0.25);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin-top: 12px;
+            color: #8bc34a;
+        }
+
+        /* experience */
+        .experience {
+            padding: 70px 0;
+        }
+        .exp-card {
+            background: #111111;
+            border-radius: 32px;
+            padding: 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            border-left: 6px solid #2d6a4f;
+        }
+        .exp-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .exp-card .exp-date {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* contact */
+        .contact {
+            padding: 80px 0;
+            background: #0c0c0c;
+        }
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.8rem 0;
+        }
+        .contact-detail i {
+            font-size: 1.6rem;
+            color: #d4af37;
+            width: 40px;
+        }
+        .contact-detail p, .contact-detail a {
+            color: #cfcfcf;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-detail a:hover {
+            color: #d4af37;
+        }
+        .cta-area {
+            flex: 1;
+            text-align: center;
+            background: #111111;
+            padding: 2rem;
+            border-radius: 32px;
+            border: 1px solid rgba(45, 106, 79, 0.5);
+        }
+        .cta-area h3 {
+            font-size: 1.9rem;
+            margin-bottom: 1rem;
+        }
+        .cta-area p {
+            margin-bottom: 2rem;
+            color: #b6b6b6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        /* animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-up {
+            animation: fadeUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        /* responsive */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .hero {
+                padding: 60px 0;
+            }
+            .about-grid {
+                flex-direction: column;
+            }
+            .contact-wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <div class="logo">
+                <h3>VIRGI<span>.</span></h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="fade-up">
+                    <h1>VIRGIAWAN PRANATA</h1>
+                    <div class="profession">AUTOMOTIVE & Export Supplier</div>
+                    <div class="tagline"><i class="fas fa-seedling" style="margin-right: 8px;"></i> PLANT ENTREPRENEURS</div>
+                    <div class="hero-desc">
+                        <p>Bridging automotive passion, global export, and green business. Let's drive innovation together.</p>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="#contact" class="btn-primary">Let's Work Together <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Me</h2>
+                    <div class="gold-border"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Hello! I'm <strong class="accent-gold">VIRGI</strong>, a Web Developer and Designer passionate about building responsive and user-friendly digital experiences.</p>
+                        <p>Over the past year and a half, I've been honing my skills through personal projects, exploring modern web technologies, and creating digital solutions that are both visually appealing and functional.</p>
+                        <div class="about-highlight">
+                            "I'm ready to apply my knowledge and creativity to develop innovative applications that make a meaningful impact."
+                        </div>
+                        <p>Beyond coding, my drive lies in the automotive industry, plant business, and international export. I combine entrepreneurial thinking with digital tools to create scalable ventures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Skills -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-title">
+                    <h2>My Skills</h2>
+                    <div class="gold-border"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-car"></i> <i class="fas fa-leaf"></i></div>
+                        <h3>AUTOMOTIVE & PLANT</h3>
+                        <p>Deep expertise in automotive industry, vehicle dynamics, and plant business management & agribusiness.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-chart-line"></i> <i class="fas fa-store"></i></div>
+                        <h3>ENTREPRENEUR & COLLECTOR</h3>
+                        <p>Strategic business mindset, brand scaling, and passionate collector of valuable assets.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-bullhorn"></i> <i class="fas fa-megaphone"></i></div>
+                        <h3>Digital Marketing</h3>
+                        <p>Performance-driven marketing, SEO, social media campaigns to boost global reach.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-ship"></i> <i class="fas fa-globe-asia"></i></div>
+                        <h3>Export Business</h3>
+                        <p>Cross-border logistics, compliance, and international trade for agricultural & plant commodities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio / Projects -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Featured Projects</h2>
+                    <div class="gold-border"></div>
+                </div>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-tractor"></i> <i class="fas fa-boxes"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>CROP EXPORT</h3>
+                            <p>Landing page for international crop supply — modern UI, inquiry system, and product showcase for agricultural commodities.</p>
+                            <span class="tech-tag"><i class="fas fa-code"></i> HTML/CSS/JS</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-chart-network"></i> <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>GLOBAL TRADERS</h3>
+                            <p>Visual concept & image gallery representing global B2B trading platform, connecting suppliers with buyers worldwide.</p>
+                            <span class="tech-tag"><i class="fas fa-image"></i> Trading Ecosystem</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-car-side"></i> <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>AutoCollect Hub</h3>
+                            <p>Digital garage & collector portfolio: showcasing rare automotive pieces and enthusiast network.</p>
+                            <span class="tech-tag">Automotive Curation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Experience</h2>
+                    <div class="gold-border"></div>
+                </div>
+                <div class="exp-card">
+                    <h3>Automotive Enthusiast & Entrepreneur</h3>
+                    <div class="exp-date"><i class="fas fa-calendar-alt"></i> 2019 - Present</div>
+                    <p>Deeply engaged in automotive culture, vehicle restoration, and community building. Founded multiple entrepreneurial initiatives bridging export of plant-based commodities and digital innovation. Scaled cross-border trade relationships while leading marketing strategies for sustainable growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact + CTA -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                    <div class="gold-border"></div>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <p>VIRGIAWANPRANATA@gmail.com</p>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fab fa-whatsapp"></i>
+                            <p><a href="https://wa.me/6282272688546" target="_blank" rel="noopener noreferrer">+6282272688546</a></p>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>SIANTAR, INDONESIA</p>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fab fa-instagram"></i>
+                            <p><a href="#" rel="noopener noreferrer">@virgiawan.pranata</a></p>
+                        </div>
+                    </div>
+                    <div class="cta-area">
+                        <h3>Let's Work Together</h3>
+                        <p>Automotive projects, export collaborations, or digital solutions — let's drive meaningful impact. Contact me today.</p>
+                        <a href="https://wa.me/6282272688546?text=Hi%20Virgiawan,%20I'm%20interested%20to%20collaborate%20with%20you!" class="btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Start a Conversation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Virgiawan Pranata — Automotive & Export Supplier. Built with <i class="fas fa-heart" style="color:#d4af37;"></i> and modern web.</p>
+        </div>
+    </footer>
+
+    <script>
+        // fade-up on scroll
+        const faders = document.querySelectorAll('.fade-up');
+        const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -20px 0px" };
+        const appearOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+        faders.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = "translateY(30px)";
+            appearOnScroll.observe(el);
+        });
+
+        // animate skill cards, project cards, etc.
+        const animatedCards = document.querySelectorAll('.skill-card, .project-card, .exp-card, .contact-detail, .cta-area');
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = "translateY(0px)";
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        animatedCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = "translateY(25px)";
+            card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            cardObserver.observe(card);
+        });
+
+        // hero visible immediately
+        window.addEventListener('load', () => {
+            const hero = document.querySelector('.hero .fade-up');
+            if(hero) {
+                hero.style.opacity = 1;
+                hero.style.transform = "translateY(0)";
+            }
+        });
+
+        // smooth anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if(href === "#" || href === "") return;
+                const target = document.querySelector(href);
+                if(target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+<a href="https://findpronow.com" target="_blank" rel="noreferrer noopener" role="button" class="btn-login">LOGIN</a>
+<a href="https://t.ly/slotgacir" target="_blank" rel="noreferrer noopener" role="button" class="btn-daftar">DAFTAR</a>
+<a href="https://firmsreview.com" target="_blank" rel="noreferrer noopener" role="button" class="btn-daftar">LINK DEMO</a>
